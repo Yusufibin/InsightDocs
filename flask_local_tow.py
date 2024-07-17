@@ -3,7 +3,7 @@ import threading
 from flask import Flask, render_template, request, jsonify
 import webview 
 
-app = Flask(__name__, template_folder='./')
+app = Flask(__name__, template_folder='templates')
 
 # Fonction de simulation de recherche
 def rechercher_documents(requete, top_k=5):
