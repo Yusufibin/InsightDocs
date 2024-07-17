@@ -1,11 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
+    <title>Bienvenue sur InsightDocs!</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif; /* Police plus moderne */
+            background-color: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 800px; /* Limite la largeur du conteneur pour un meilleur confort de lecture */
+        }
+
+        .logo-container {
+            width: 150px; /* Ajustez la taille du cercle si besoin */
+            height: 150px;
+            border-radius: 50%; /* Crée le cercle */
+            background-color: white; /* Fond blanc pour le cercle */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 2em; /* Centre le cercle et ajoute une marge inférieure */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Ajoute une ombre subtile */
+        }
+
+        .logo {
+            width: 80%; /* Ajustez la taille du logo à l'intérieur du cercle */
+            height: auto;
+        }
+
+        h1 {
+            font-size: 3.5em; /* Augmente légèrement la taille du titre */
+            color: #2196F3;
+            font-weight: 500; /* Poids du texte légèrement plus épais */
+            margin-bottom: 0.3em;
+        }
+
+        p {
+            font-size: 1.4em; /* Augmente la taille du texte descriptif */
+            color: #333; /* Couleur de texte plus foncée */
+            line-height: 1.6; /* Espacement entre les lignes pour une meilleure lisibilité */
+            margin-bottom: 2.5em;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1.2em 2.4em; /* Augmente le padding du bouton */
+            background-color: #2196F3;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px; /* Coins légèrement plus arrondis */
+            transition: background-color 0.3s ease;
+            font-weight: 500; /* Texte du bouton légèrement plus épais */
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée */
+        }
+
+        .btn:hover {
+            background-color: #1976D2;
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello, World!</h1>
+    <div class="container">
+        <div class="logo-container">
+            <img src="votre-logo.png" alt="Logo de l'application" class="logo">
+        </div>
+        <h1>Bienvenue!</h1>
+        <p>InsightDocs est une application d'intelligence artificielle pour la gestion avancée des documents. </p>
+        <a href="#" class="btn">Explorer InsightDocs</a>
+    </div>
 </body>
 </html>
