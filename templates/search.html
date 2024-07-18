@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recherche Sémantique - InsightDocs</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+    }
+
+    .header {
+      background-color: #2980b9;
+      color: white;
+      padding: 20px 30px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 2.2em;
+      margin-right: 10px;
+    }
+
+    .app-name-btn {
+      background: none;
+      border: none;
+      padding: 0;
+      font-size: 1.2em;
+      color: white;
+      cursor: pointer;
+      font-weight: 500;
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 40px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #search-section {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .search-logo {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+    }
+
+    #search-box {
+      flex: 1;
+      padding: 14px 18px;
+      border: 1px solid #e0e0e0;
+      border-radius: 25px;
+      font-size: 1.1em;
+      box-sizing: border-box;
+    }
+
+    #search-box:focus {
+      outline: none;
+      border-color: #2980b9;
+      box-shadow: 0px 0px 5px rgba(41, 128, 185, 0.3);
+    }
+
+    button {
+      background-color: #2980b9;
+      color: white;
+      padding: 14px 25px;
+      border: none;
+      border-radius: 0 25px 25px 0;
+      cursor: pointer;
+      font-size: 1.1em;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #216994;
+    }
+
+    #results {
+      margin-top: 20px;
+    }
+
+    .result-item {
+      border-bottom: 1px solid #eee;
+      padding: 15px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .result-item img {
+      width: 80px;
+      height: 80px;
+      border-radius: 5px;
+      object-fit: cover;
+    }
+
+    .result-item .content {
+      flex: 1;
+    }
+
+    .result-item h3 {
+      margin-top: 0;
+      margin-bottom: 8px;
+      font-size: 1.3em;
+    }
+
+    .result-item p {
+      margin: 0;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 100;
+      display: none;
+    }
+
+    .popup .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 1.2em;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Recherche Sémantique</h1>
+    <button class="app-name-btn" onclick="openPopup()">InsightDocs</button>
+  </div>
+
+  <div class="container">
+    <div id="search-section">
+      <img src="votre-logo.png" alt="Logo InsightDocs" class="search-logo">
+      <input type="text" id="search-box" placeholder="Rechercher dans InsightDocs...">
+      <button onclick="rechercher()">Rechercher</button>
+    </div>
+    <div id="results"></div>
+  </div>
+
+  <div class="popup" id="app-name-popup">
+    <span class="close-btn" onclick="closePopup()">×</span>
+    <h2>À propos d'InsightDocs</h2>
+    <p>Ceci est un popup qui s'affiche lorsque vous cliquez sur le nom de l'application.</p>
+  </div>
+
+  <script>
+    function rechercher() {
+
+    }
+
+    function openPopup() {
+      document.getElementById("app-name-popup").style.display = "block";
+    }
+
+    function closePopup() {
+      document.getElementById("app-name-popup").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
