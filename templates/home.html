@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InsightDocs</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .header {
+            background-color: #2980b9;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .app-name-btn {
+            background: none;
+            border: none;
+            padding: 0;
+            font-size: 1.5em;
+            color: white;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+            gap: 40px;
+            padding: 40px;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .button-container {
+            width: 250px;
+            height: 180px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .button-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .button-text {
+            font-size: 1.8em;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+            display: none;
+        }
+
+        .popup .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <button class="app-name-btn">InsightDocs</button>
+    </div>
+
+    <div class="content">
+        <div class="container">
+            <div class="button-container" data-target="#recherche-popup">
+                <span class="button-text">Recherche Émantique</span>
+            </div>
+            <div class="button-container" data-target="#analyse-popup">
+                <span class="button-text">Analyse</span>
+            </div>
+            <div class="button-container" data-target="#chat-popup">
+                <span class="button-text">Chat</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup" id="recherche-popup">
+        <span class="close-btn" onclick="closePopup('#recherche-popup')">×</span>
+        <h2>Recherche Émantique</h2>
+        <p>Contenu du popup de recherche...</p>
+    </div>
+
+    <div class="popup" id="analyse-popup">
+        <span class="close-btn" onclick="closePopup('#analyse-popup')">×</span>
+        <h2>Analyse</h2>
+        <p>Contenu du popup d'analyse...</p>
+    </div>
+
+    <div class="popup" id="chat-popup">
+        <span class="close-btn" onclick="closePopup('#chat-popup')">×</span>
+        <h2>Chat</h2>
+        <p>Contenu du popup de chat...</p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            setupPopupButtons();
+        });
+
+        function setupPopupButtons() {
+            let buttons = document.querySelectorAll('.button-container');
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    let targetPopupId = button.getAttribute('data-target');
+                    openPopup(targetPopupId);
+                });
+            });
+        }
+
+        function openPopup(popupId) {
+            document.querySelector(popupId).style.display = 'block';
+        }
+
+        function closePopup(popupId) {
+            document.querySelector(popupId).style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>
