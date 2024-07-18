@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chargement d'InsightDocs...</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 800px; 
+        }
+
+        .logo-container {
+            width: 150px; 
+            height: 150px;
+            border-radius: 50%; 
+            background-color: white; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 2em; 
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+        }
+
+        .logo {
+            width: 80%; 
+            height: auto;
+        }
+
+        .loading-bar {
+            width: 100%;
+            height: 10px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden; 
+            margin-bottom: 2em;
+        }
+
+        .loading-bar-progress {
+            width: 0%; 
+            height: 100%;
+            background-color: #2196F3;
+            animation: loading 2s linear infinite; 
+        }
+
+        @keyframes loading {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+
+        h1 {
+            font-size: 2em; 
+            color: #2196F3;
+            font-weight: 500; 
+            margin-bottom: 0.5em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <img src="votre-logo.png" alt="Logo de l'application" class="logo">
+        </div>
+        <div class="loading-bar">
+            <div class="loading-bar-progress"></div>
+        </div>
+        <h1>Chargement en cours...</h1>
+    </div>
+
+    <script>
+        setTimeout(function() {
+            window.location.href = "index.html"; 
+        }, 2000); 
+    </script>
+</body>
+</html>
